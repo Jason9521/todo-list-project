@@ -1,0 +1,218 @@
+
+:root {
+    --pale-green: #cad2c5;
+    --green-one: #84a98c;
+    --green-two: #52796f;
+    --green-three: #354f52;
+    --green-four: #2f3e46;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+        background-color: var(--pale-green);
+        font-family: 'Roboto', sans-serif;
+}
+
+.page-title {
+    display: flex;
+    padding: 2rem;
+    background-color: var(--green-two);
+}
+
+.page-title h2 {
+    font-size: 3rem;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.menu-toggle {
+    position: absolute;
+    top: 45px;
+    color: #fff
+}
+
+.menu-toggle.visible {
+    left: 310px;
+}
+
+.add-task {
+    display: flex;
+    align-self: center;
+    color: #fff;
+}
+
+.menu-toggle:hover,
+.add-task:hover {
+    cursor: pointer;
+}
+
+
+/* SIDE MENU */
+
+.side-menu.visible {
+    left: 0;
+}
+
+.side-menu {
+    width: 300px;
+    height: 100vh;
+    position: relative;
+    left: -300px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--green-three);
+    color: #fff;
+    transition: .5s;
+}
+
+.side-menu button {   
+    width: 80%;
+    margin: 1.5rem 0;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: var(--green-three);
+    border: solid 2px var(--green-two);
+    border-radius: 5px;
+    transition: .2s;
+}
+
+.side-menu button:hover {
+    cursor: pointer;
+    background-color: var(--green-two);
+}
+
+.side-menu h2 {
+    width: 80%;
+    margin: 3rem 0 1rem;
+    border-bottom: 3px solid var(--green-two);
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+.side-menu i {
+    padding-right: 0.7rem;
+}
+
+.project-entries {
+    margin-top: 1rem;
+}
+
+.project-entries button {
+    width: 13rem;
+    margin: 0 auto;
+    border-radius: 15px;
+    background-color: var(--green-two);
+    font-size: 0.8rem;
+}
+
+/* PAGE INTERFACE */
+
+.interface-container {
+    display: flex;
+}
+
+.page-interface {
+    position: relative;
+    font-size: 1.5rem;
+    right: 300px;
+    transition: .5s;
+    padding: 2rem 4rem;
+}
+
+.page-interface.visible {
+    right: 0px;
+}
+
+.page-interface h2 {
+    color: var(--green-three);
+    width: 60vw;
+    border-bottom: solid 3px;
+}
+
+/* MODAL */
+
+.modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: -10%;  
+    left: 50%; 
+    transform: translate(-50%, 50%);
+    background-color: var(--green-two);
+    height: 70vh;
+    width: 50vw;
+    max-width: 550px;
+    border: solid 4px #fff; /*TEMPORARY*/
+    border-radius: 10px;
+    visibility: hidden;
+}
+
+.form-title {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.form-title h2 {
+    padding: 1.5rem 0;
+}
+
+.form-title i {
+    padding-right: 0.5rem;
+    color: black;
+}
+
+.fa-square-xmark {
+    position: absolute;
+    top: 38px;
+    right: 10px;
+    color: black;
+}
+
+.fa-square-xmark:hover {
+    cursor: pointer;
+}
+
+.modal label {
+    padding: 0 0 0.3rem 2.2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.modal textarea {
+    resize: vertical;
+}
+
+.modal textarea::placeholder {
+    padding-left: 1rem;
+}
+
+.modal input,
+.modal textarea,
+.modal select {
+    margin: 0 auto;
+    width: 85%;
+    margin-bottom: 1rem;
+    padding: 0.5rem ;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.modal select:hover,
+.due-date:hover {
+    cursor: pointer;
+}
+
+/*  */
+

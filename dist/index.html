@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Work+Sans:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/141c8af32c.js" crossorigin="anonymous"></script>
+    <title>Just Get Up</title>
+    <link type="image/png" sizes="32x32" rel="icon" href="/correct.png">
+</head>
+
+<body>
+    <div class="page-title">
+        
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars fa-2x"></i>
+        </div>
+
+        <h2 id="pageTitle">Just Get Up!</h2>
+
+        <div class="add-task" id="addTask">
+            <i class="fa-solid fa-plus fa-2x"></i>
+        </div>
+
+    </div>
+
+    <div class="interface-container">
+
+        <div class="side-menu" id="sideMenu">
+
+            <button class="inbox-button" id="inboxButton">
+                <i class="fa-solid fa-inbox"></i>Inbox</button>
+
+            <button class="today-button" id="todayButton">
+                <i class="fa-solid fa-calendar-day"></i>Today</button>
+
+            <button class="week-button" id="weekButton">
+                <i class="fa-solid fa-calendar-week"></i>This Week</button>
+
+            <h2>Projects</h2>
+            <button class="add-project" id="addProject">
+                <i class="fa-solid fa-circle-plus"></i>Add Project</button>
+
+            <div class="project-entries" id="projectEntries">
+
+                <!-- <div>
+                    <i class="fa-solid fa-list-ul"></i>
+                    <button>TEST</button>
+                </div> -->
+
+            </div>
+
+        </div>
+
+        <div class="page-interface" id="pageInterface">
+            <h2 id="interfaceHeading">Inbox</h2>
+        </div>
+
+    </div>
+
+    <form class="modal" id="modal">
+
+        <div class="form-title">
+            <h2><i class="fa-solid fa-circle-plus"></i>Add Task</h2>
+            <i id="closeModal" class="fa-solid fa-square-xmark fa-2xl"></i>
+        </div>
+
+        <label for="taskTitle">Title</label>
+        <input class="task-title" type="text" id="taskTitle">
+
+        <label for="taskDescription">Description</label>
+        <textarea class="task-description" name="taskDescription" id="taskDescription" cols="30" rows="10"></textarea>
+
+        <label for="taskProject">Project</label>
+        <select class="task-project" name="taskProject" id="taskProject">
+            <option value="" disabled selected hidden>Project</option>
+        </select>
+
+        <label for="taskPriority">Priority</label>
+        <select class="task-priority" name="taskPriority" id="taskPriority">
+            <option value="" disabled selected hidden>Priority</option>
+        </select>
+
+        <label for="dueDate">Due Date</label>
+        <input class="due-date" type="date">
+
+    </form>
+
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>
