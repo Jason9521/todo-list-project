@@ -16,6 +16,7 @@
 body {
         background-color: var(--pale-green);
         font-family: 'Roboto', sans-serif;
+        
 }
 
 .page-title {
@@ -135,27 +136,58 @@ body {
 
 .page-interface h2 {
     color: var(--green-three);
-    width: 60vw;
+    /* width: 200vw; */
     border-bottom: solid 3px;
+    margin-bottom: 2rem;
+}
+
+.entry-title {
+    display: flex;
+    align-items: baseline;
+}
+
+.entry-title input {
+    margin-right: 0.5rem;
+}
+
+.task-entry {
+    width: 60vw;
+    max-width: 850px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.entry-buttons i {
+    margin: 0 0.3rem;
 }
 
 /* MODAL */
 
 .modal {
     position: absolute;
-    display: flex;
     flex-direction: column;
-    top: -10%;  
+    top: -20%;  
     left: 50%; 
     transform: translate(-50%, 50%);
     background-color: var(--green-two);
-    height: 70vh;
+    height: 74vh;
     width: 50vw;
     max-width: 550px;
-    border: solid 4px #fff; /*TEMPORARY*/
+    border: solid 4px #fff;
     border-radius: 10px;
-    visibility: hidden;
+    opacity: 0.5;
 }
+
+@keyframes fade-in {
+    0% { top: -25%; }
+    100% { top: -20%; opacity: 1; }
+}
+
+.modal::backdrop {
+    background-color: rgba(0,0,0,0.5);
+}
+
 
 .form-title {
     display: flex;
@@ -183,8 +215,15 @@ body {
     cursor: pointer;
 }
 
+.modal-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .modal label {
-    padding: 0 0 0.3rem 2.2rem;
+    display: flex;
+    padding: 0 0 0.4rem;
     font-size: 1.2rem;
     font-weight: 700;
 }
@@ -203,10 +242,28 @@ body {
     margin: 0 auto;
     width: 85%;
     margin-bottom: 1rem;
-    padding: 0.5rem ;
+    padding: 0.2rem ;
     border: none;
     border-radius: 5px;
     font-size: 1rem;
+}
+
+.modal button {
+    display: flex;
+    margin: 0.8rem auto;
+    padding: 0.5rem 2.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.modal button:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: var(--green-one);
+    transition: 0.3s;
 }
 
 .modal select:hover,
