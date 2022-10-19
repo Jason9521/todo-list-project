@@ -55,37 +55,66 @@
 
         <div class="page-interface" id="pageInterface">
             <h2 id="interfaceHeading">Inbox</h2>
+
+            <div class="task-entries" id="taskEntries">
+                <div class="task-entry">
+                    <div class="entry-title">
+                        <input type="checkbox">
+                        <h6> Some Title</h6>
+                    </div>
+                    <h6>Due: 10/23/2022</h6>
+                    <div class="entry-buttons">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
 
-    <form class="modal" id="modal">
+    <dialog class="modal" id="modal">
 
         <div class="form-title">
             <h2><i class="fa-solid fa-circle-plus"></i>Add Task</h2>
             <i id="closeModal" class="fa-solid fa-square-xmark fa-2xl"></i>
         </div>
 
-        <label for="taskTitle">Title</label>
-        <input class="task-title" type="text" id="taskTitle">
+        <form action="index.html" method="GET">
+            <div class="modal-input">
+                <label for="taskTitle">Title</label>
+                <input class="task-title" type="text" id="taskTitle">
+            </div>
+            <div class="modal-input">
+                <label for="taskDescription">Description</label>
+                <textarea class="task-description" name="taskDescription" id="taskDescription" cols="30" rows="10"></textarea>
+            </div>
+            <div class="modal-input">
+                <label for="taskProject">Project</label>
+                <select class="task-project" name="taskProject" id="taskProject">
+                    <option value="" disabled selected hidden>Project</option>
+                    <option value="Inbox">Inbox</option>
+                </select>
+            </div>
+            <div class="modal-input">
+                <label for="taskPriority">Priority</label>
+                <select class="task-priority" name="taskPriority" id="taskPriority">
+                    <option value="" disabled selected hidden>Priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+            <div class="modal-input">
+                <label for="due-date">Due Date</label>
+                <input id="dueDate" class="due-date" type="date">
+            </div>
+            
+            <button id="submitTask">Add</button>
 
-        <label for="taskDescription">Description</label>
-        <textarea class="task-description" name="taskDescription" id="taskDescription" cols="30" rows="10"></textarea>
+        </form>
 
-        <label for="taskProject">Project</label>
-        <select class="task-project" name="taskProject" id="taskProject">
-            <option value="" disabled selected hidden>Project</option>
-        </select>
-
-        <label for="taskPriority">Priority</label>
-        <select class="task-priority" name="taskPriority" id="taskPriority">
-            <option value="" disabled selected hidden>Priority</option>
-        </select>
-
-        <label for="dueDate">Due Date</label>
-        <input class="due-date" type="date">
-
-    </form>
+    </dialog>
 
 
     
