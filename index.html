@@ -44,11 +44,6 @@
 
             <div class="project-entries" id="projectEntries">
 
-                <!-- <div>
-                    <i class="fa-solid fa-list-ul"></i>
-                    <button>TEST</button>
-                </div> -->
-
             </div>
 
         </div>
@@ -57,17 +52,41 @@
             <h2 id="interfaceHeading">Inbox</h2>
 
             <div class="task-entries" id="taskEntries">
-                <div class="task-entry">
+                <!-- <div class="task-entry">
                     <div class="entry-title">
                         <input type="checkbox">
-                        <h6> Some Title</h6>
+                        <h6 class="task-title"> Some Title</h6>
                     </div>
-                    <h6>Due: 10/23/2022</h6>
+                    <h6 class="date">Due: 10/23/2022</h6>
                     <div class="entry-buttons">
                         <i class="fa-solid fa-pen-to-square"></i>
                         <i class="fa-solid fa-xmark"></i>
                     </div>
                 </div>
+
+                <div class="task-entry">
+                    <div class="entry-title">
+                        <input type="checkbox">
+                        <h6 class="task-title"> Wash Dishes</h6>
+                    </div>
+                    <h6 class="date">Due: 10/1/2022</h6>
+                    <div class="entry-buttons">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+
+                <div class="task-entry">
+                    <div class="entry-title">
+                        <input type="checkbox">
+                        <h6 class="task-title"> Walk Dog</h6>
+                    </div>
+                    <h6 class="date">Due: 10/12/2022</h6>
+                    <div class="entry-buttons">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div> -->
             </div>
         </div>
 
@@ -83,7 +102,7 @@
         <form action="index.html" method="GET">
             <div class="modal-input">
                 <label for="taskTitle">Title</label>
-                <input class="task-title" type="text" id="taskTitle">
+                <input class="task-title" type="text" id="taskTitle" required>
             </div>
             <div class="modal-input">
                 <label for="taskDescription">Description</label>
@@ -91,14 +110,14 @@
             </div>
             <div class="modal-input">
                 <label for="taskProject">Project</label>
-                <select class="task-project" name="taskProject" id="taskProject">
+                <select class="task-project" name="taskProject" id="taskProject" required>
                     <option value="" disabled selected hidden>Project</option>
                     <option value="Inbox">Inbox</option>
                 </select>
             </div>
             <div class="modal-input">
                 <label for="taskPriority">Priority</label>
-                <select class="task-priority" name="taskPriority" id="taskPriority">
+                <select class="task-priority" name="taskPriority" id="taskPriority" required>
                     <option value="" disabled selected hidden>Priority</option>
                     <option value="Low">Low</option>
                     <option value="Medium">Medium</option>
@@ -107,11 +126,31 @@
             </div>
             <div class="modal-input">
                 <label for="due-date">Due Date</label>
-                <input id="dueDate" class="due-date" type="date">
+                <input id="dueDate" class="due-date" type="date" required>
             </div>
             
             <button id="submitTask">Add</button>
+            <h4 class="task-error" id="taskError">Error message goes here</h4>
+        </form>
 
+    </dialog>
+
+    
+
+    <dialog class="project-modal" id="projectModal">
+
+        <div class="form-title">
+            <h2><i class="fa-solid fa-circle-plus"></i>Add Project</h2>
+            <i id="closeProjectModal" class="fa-solid fa-square-xmark fa-2xl"></i>
+        </div>
+
+        <form action="index.html" method="GET">
+            <div class="modal-input">
+                <label for="projectTitle">Project Name</label>
+                <input class="project-title" type="text" id="projectTitle">
+            </div>
+
+            <button id="submitProject">Add</button>
         </form>
 
     </dialog>
