@@ -1,8 +1,10 @@
 'use strict'
 
-export {addTask, closeModal, submitTask}
+import { projectArray } from "./addProject"
+export { Task ,addTask, closeModal, submitTask}
 
 const addTask = document.getElementById('addTask');
+const taskEntries = document.getElementById('taskEntries')
 const closeModal = document.getElementById('closeModal');
 const modal = document.getElementById('modal');
 const submitTask = document.getElementById('submitTask');
@@ -11,12 +13,12 @@ const taskDescription = document.getElementById('taskDescription')
 const taskProject = document.getElementById('taskProject')
 const taskPriority = document.getElementById('taskPriority')
 const dueDate = document.getElementById('dueDate')
-
-let dataArray = []
+const taskError = document.getElementById('taskError')
 
 class Task {
 
     constructor() {
+        
         this.title = taskTitle.value;
         this.description = taskDescription.value;
         this.project = taskProject.value;
@@ -25,11 +27,64 @@ class Task {
     }
 
     storeData() {
-        dataArray.push(this)
+
+        projectArray.forEach(project => {
+            if (project.title == this.project) {
+                project.storedTasks.push(this)
+            }
+        })
     }
 
-    displayData() {
+    loadData() {
+        // Compile data into an array and display tasks according to stored data
+    }
 
+    showError() {
+        taskError.style.visibility = 'hidden'
+    }
+
+    taskError() {
+
+        if (this.title == '' || this.title == null) {
+            taskError.textContent = '"Title" field is required'
+            taskError.style.visibility = 'visible'
+            setTimeout(() => {
+                this.showError()
+            }, 5000);
+        }
+
+        else if (this.project == '') {
+            taskError.textContent = '"Project" field is required'
+            taskError.style.visibility = 'visible'
+            setTimeout(() => {
+                this.showError()
+            }, 5000);
+        }
+
+        else if (this.priority == '') {
+            taskError.textContent = '"Priority" field is required'
+            taskError.style.visibility = 'visible'
+            setTimeout(() => {
+                this.showError()
+            }, 5000);
+        }
+
+        else if (this.dueDate == '') {
+            taskError.textContent = '"Due Date" field is required'
+            taskError.style.visibility = 'visible'
+            setTimeout(() => {
+                this.showError()
+            }, 5000);
+        }
+
+    }
+
+    resetValues() {
+        taskTitle.value = ''
+        taskDescription.value = ''
+        taskProject.value = ''
+        taskPriority.value = ''
+        dueDate.value = ''
     }
 }
 
@@ -45,15 +100,13 @@ closeModal.addEventListener('click', function() {
 submitTask.addEventListener('click', function(e) {
     e.preventDefault()
     let data = new Task
+    data.taskError()
     data.storeData()
 
-    taskTitle.value = ''
-    taskDescription.value = ''
-    taskProject.value = ''
-    taskPriority.value = ''
-    dueDate.value = ''
-
-    modal.close()
     
+
+    // modal.close()
 })
+
+
 
