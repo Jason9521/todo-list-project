@@ -4,7 +4,6 @@ import { projectArray } from "./addProject"
 export { Task ,addTask, closeModal, submitTask}
 
 const addTask = document.getElementById('addTask');
-const taskEntries = document.getElementById('taskEntries')
 const closeModal = document.getElementById('closeModal');
 const modal = document.getElementById('modal');
 const submitTask = document.getElementById('submitTask');
@@ -45,6 +44,8 @@ class Task {
 
     taskError() {
 
+        let taskSubmit = false
+
         if (this.title == '' || this.title == null) {
             taskError.textContent = '"Title" field is required'
             taskError.style.visibility = 'visible'
@@ -77,6 +78,15 @@ class Task {
             }, 5000);
         }
 
+        else {
+            taskSubmit = true
+        }
+
+        if (taskSubmit) {
+            this.storeData()
+            this.resetValues()
+            modal.close()
+        }
     }
 
     resetValues() {
@@ -101,11 +111,6 @@ submitTask.addEventListener('click', function(e) {
     e.preventDefault()
     let data = new Task
     data.taskError()
-    data.storeData()
-
-    
-
-    // modal.close()
 })
 
 
