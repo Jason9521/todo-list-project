@@ -321,7 +321,7 @@ body {
     transform: translate(-50%, -50%);
     top: 50%;  
     left: 50%; 
-    width: 50vw;
+    width: 48vw;
     max-width: 550px;
     /* margin: 0 auto; */
     padding: 0.5rem 0;
@@ -335,7 +335,7 @@ body {
 /* PROJECT MODAL */
 
 .project-modal {
-    height: 15rem;
+    height: 16rem;
     width: 20rem;
     margin: auto;
     background-color: var(--green-two);
@@ -349,5 +349,21 @@ body {
     height: 1.5rem;
     width: 85%;
     padding-left: 0.2rem;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
+}
+
+.project-error {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 45%;  
+    left: 50%;
+    width: 18rem;
+    /* max-width: 550px; */
+    padding: 0.3rem 0;
+    text-align: center;
+    background-color: red;
+    color: #fff;
+    font-size: 0.8rem;
+    z-index: 2;
+    visibility: hidden;
 }
