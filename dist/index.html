@@ -17,10 +17,10 @@
     <div class="page-title">
         
         <div class="menu-toggle" id="menuToggle">
-            <i class="fa-solid fa-bars fa-2x"></i>
+            <i  class="fa-solid fa-bars fa-2x"></i>
         </div>
 
-        <h2 id="pageTitle">Just Get Up!</h2>
+        <h2 id="pageTitle">A Task on Typin'</h2>
 
         <div class="add-task" id="addTask">
             <i class="fa-solid fa-plus fa-2x"></i>
@@ -30,7 +30,7 @@
 
     <!-- INTERFACE -->
 
-    <div class="interface-container">
+    <div class="interface-container" id="interfaceContainer">
 
         <div class="side-menu" id="sideMenu">
 
@@ -54,11 +54,16 @@
         </div>
 
         <div class="page-interface" id="pageInterface">
+
             <h2 id="interfaceHeader">Inbox</h2>
-
-            <div class="task-entries" id="taskEntries"></div>
+            
+            
+            <div class="task-entries" id="taskEntries">
+              
+            </div>    
+            
         </div>
-
+    
     </div>
 
     <!-- ADD TASK MODAL -->
@@ -66,19 +71,16 @@
     <dialog class="modal" id="modal">
 
         <div class="form-title">
-            <h2><i class="fa-solid fa-circle-plus"></i>Add Task</h2>
-            <i id="closeModal" class="fa-solid fa-square-xmark fa-2xl"></i>
+            <h2><u>Add Task</u></h2>
+            <i id="closeModal" class="fa-solid fa-xmark fa-xl modal-close"></i>
         </div>
 
         <form action="index.html" method="GET">
             <div class="modal-input">
                 <label for="taskTitle">Title *</label>
-                <input class="task-title" type="text" id="taskTitle" required>
+                <input class="task-title" type="text" id="taskTitle" maxlength="25" required>
             </div>
-            <div class="modal-input">
-                <label for="taskDescription">Description</label>
-                <textarea class="task-description" name="taskDescription" id="taskDescription" cols="30" rows="10"></textarea>
-            </div>
+
             <div class="modal-input">
                 <label for="taskProject">Project *</label>
                 <select class="task-project" name="taskProject" id="taskProject" required>
@@ -111,14 +113,14 @@
     <dialog class="project-modal" id="projectModal">
 
         <div class="form-title">
-            <h2><i class="fa-solid fa-circle-plus"></i>Add Project</h2>
-            <i id="closeProjectModal" class="fa-solid fa-square-xmark fa-2xl"></i>
+            <h2><u>Add Project</u></h2>
+            <i id="closeProjectModal" class="fa-solid fa-xmark fa-xl modal-close"></i>
         </div>
 
         <form action="index.html" method="GET">
             <div class="modal-input">
                 <label for="projectTitle">Project Name</label>
-                <input class="project-title" type="text" id="projectTitle">
+                <input class="project-title" type="text" id="projectTitle" maxlength="20">
             </div>
 
             <button id="submitProject">Add</button>
@@ -127,6 +129,46 @@
 
     </dialog>
 
+    <!-- TASK EDIT MODAL -->
+
+    <dialog class="modal" id="editModal">
+
+        <div class="form-title">
+            <h2><u>Edit Task</u></h2>
+            <i id="closeEditModal" class="fa-solid fa-xmark fa-xl modal-close"></i>
+        </div>
+
+        <form action="index.html" method="GET">
+
+            <div class="modal-input">
+                <label for="taskTitle">Title *</label>
+                <input class="task-title" type="text" id="editTitle" maxlength="25" required>
+            </div>
+
+            <div class="modal-input">
+                <label for="taskPriority">Priority *</label>
+                <select class="task-priority" name="taskPriority" id="editPriority" required>
+                    <option value="" disabled selected hidden>Priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+
+            <div class="modal-input">
+                <label for="due-date">Due Date *</label>
+                <input id="editDueDate" class="due-date" type="date" required>
+            </div>
+            
+            <button id="updateButton">Update</button>
+            <h4 class="task-error" id="editError"></h4>
+        </form>
+
+    </dialog>
+
     <script src="main.js"></script>
 </body>
 </html>
+
+
+
