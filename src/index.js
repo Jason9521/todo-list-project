@@ -6,7 +6,7 @@ import { Task, addTask, closeModal, submitTask, taskArray } from './addTask';
 import { Project, storeAllTasks, storeAllProjects, fetchProjects, fetchAllTasks, projectArray, allTasks } from './addProject';
 
 // Create Default Projects
-// localStorage.clear()
+
 let inbox = new Project
 let today = new Project
 let week = new Project
